@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+  app:
+    image: edutour/api-gateway
+    ports:
+      - "0.0.0.0:8000:8000"
+    env_file:
+      - .env

@@ -1,0 +1,32 @@
+http:
+  host: 0.0.0.0
+  port: 8000
+  MaxHeaderMegabytes: 1
+  readTimeout: 10s
+  writeTimeout: 10s
+
+smtp:
+  host: smtp.yandex.ru
+  port: 587
+  user: rusya-mald@yandex.ru
+
+env: prod
+
+migrationPath: ./migrations
+
+cache:
+  ttl: 60s
+
+auth:
+  jwt:
+    accessTTL: 300s
+    refreshTTL: 60h
+  verificationCodeLength: 6
+
+
+pg:
+  host: postgres
+  port: 5432
+  user: pguser
+  dbname: devdb
+  sslmode: disable

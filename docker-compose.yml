@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  auth-service:
+    image: edutour/auth-service
+    depends_on:
+      - postgres
+      - api-gateway
+    env_file:
+      - ./auth-service/.env
+
+  api-gateway:
+    image: edutour/api-gateway
+    ports:
+      - "8000:8000"
+
+  postgres:
+    image: postgres
+    ports:
+      - "5431:5432"
+    volumes:
+      - ./.databases/postgres:/var/lib/postgresql/data
+    env_file:
+      - ./auth-service/.env
+    environment:
+      POSTGRES_DB: "devdb"
+      POSTGRES_USER: "pguser"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
