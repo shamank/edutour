@@ -53,7 +53,7 @@ func (s *AuthService) SignUp(ctx context.Context, input UserSignUpInput) error {
 	// TODO: сделать нормальную верстку
 	err = s.emailManager.SendMail([]string{input.Email},
 		"Password confirm",
-		"confirm email: http://localhost:3000/verifyemail/"+confirmToken)
+		"confirm email:  https://education-tourism.netlify.app/verifyemail/"+confirmToken)
 
 	// TODO: сделать обработку ошибки
 	if err != nil {
@@ -111,7 +111,7 @@ func (s *AuthService) ResetPassword(ctx context.Context, email string) error {
 	// TODO: сделать нормальную верстку
 	err = s.emailManager.SendMail([]string{email},
 		"Password confirm",
-		"confirm reset password: http://localhost:3000/reset-password/"+resetToken)
+		"confirm reset password: https://education-tourism.netlify.app/reset-password/"+resetToken)
 
 	// TODO: сделать обработку ошибки
 	if err != nil {
