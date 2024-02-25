@@ -1,7 +1,7 @@
 package sl
 
 import (
-	"github.com/shamank/edutour-apigateway/pkg/logger/sl/handlers/slogpretty"
+	"github.com/shamank/edutour-backend/apigateway/pkg/logger/sl/handlers/slogpretty"
 	"log/slog"
 	"os"
 )
